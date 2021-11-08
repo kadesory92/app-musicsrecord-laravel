@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Models\Artist;
-use App\Models\Palylist;
+use App\Models\Playlist;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

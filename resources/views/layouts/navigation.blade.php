@@ -18,11 +18,19 @@
                     </x-nav-link>
                     
                     <x-nav-link :href="route('albums.index')" :active="request()->routeIs('albums.index')">
-                        {{ __('Liste des posts') }}
+                        {{ __('Liste des albums') }}
                     </x-nav-link>
                     <x-nav-link :href="route('artists.index')" :active="request()->routeIs('artists.index')">
                         {{ __('Liste des artistes') }}
                     </x-nav-link>
+                    @auth
+                    <x-nav-link :href="route('albums.create')" :active="request()->routeIs('albums.create')">
+                        {{ __('Créer un album') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('artists.create')" :active="request()->routeIs('artists.create')">
+                        {{ __('Créer un artiste') }}
+                    </x-nav-link>
+                    @endauth
                 </div>
             </div>
 
@@ -44,8 +52,8 @@
                     </x-slot>
                     <x-slot name="content">
                         <!-- Authentication -->
-                        <x-dropdown-link :href="route('posts.create')">
-                            {{ __('Ajouter un post') }}
+                        <x-dropdown-link :href="route('playlists.create')">
+                            {{ __('Ajouter un playlist') }}
                         </x-dropdown-link>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

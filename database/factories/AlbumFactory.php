@@ -15,7 +15,7 @@ class AlbumFactory extends Factory
     {
         return [
             'cover_image'=>$this->faker->image('public/storage/images',630,470, null, false),
-            'name'=>$this->faker->name,
+            'name'=>$this->faker->sentence(rand(3,7)),
             'desc_albums'=>$this->faker->text(255),
             //
         ];

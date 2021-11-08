@@ -15,7 +15,7 @@ class ArtistFactory extends Factory
     {
         return [
 
-            'name'=>$this->faker->sentence(rand(5,10)),
+            'name'=>$this->faker->name,
             'profileimage'=>$this->faker->image('public/storage/images',640,480, null, false),
 
             //

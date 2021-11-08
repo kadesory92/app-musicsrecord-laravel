@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\PlaylistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,10 +25,13 @@ Route::get('artists', [ArtistController::class, 'index'])->name('artists.index')
 //Route::resource('artists', ArtistController::class);
 //Route::resource('albums', AlbumController::class);
 
+Route::resource('playlists', PlaylistController::class);
+
 
 Route::middleware(['auth'])->group(function () {
 
-    //Route::resource('albums', AlbumController::class)->except('index');
+    Route::resource('albums', AlbumController::class)->except('index');
+    Route::resource('artists', ArtistController::class)->except('index');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
     

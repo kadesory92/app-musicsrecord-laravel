@@ -14,7 +14,8 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        return view('albums.index');
+        $albums=Album::paginate(5);
+        return view('albums.index', compact('albums'));
         //
     }
 
@@ -47,6 +48,7 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
+        return view('albums.show', compact('album'));
         //
     }
 
@@ -58,6 +60,7 @@ class AlbumController extends Controller
      */
     public function edit(Album $album)
     {
+        return view('albums.edit', compact('album'));
         //
     }
 
@@ -81,6 +84,10 @@ class AlbumController extends Controller
      */
     public function destroy(Album $album)
     {
+
+        $album->delete();
+
+        return redirect()->route('albums.index')->with('success', 'Votre album a été supprimé');
         //
     }
 }
