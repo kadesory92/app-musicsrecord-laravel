@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="container flex justify-center mx-auto mt-10">
+    <div class="container flex justify-center mx-auto mt-7">
         <div class="flex flex-col">
             <div class="w-full">
                 <div class="border-b border-gray-200 shadow">
