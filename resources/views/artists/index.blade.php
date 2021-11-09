@@ -60,7 +60,9 @@
                         </tbody>
                     </table>
                 </div>
-                {{ $artists->links() }}
+                <div class="block flex justify-center mt-1">
+                    {{ $artists->links() }}
+                </div>
             </div>
         </div>
     </div>
