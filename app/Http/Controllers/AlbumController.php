@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AlbumRequest;
+use App\Models\Artist;
 use App\Models\Album;
 use Illuminate\Http\Request;
 
@@ -26,6 +28,8 @@ class AlbumController extends Controller
      */
     public function create()
     {
+        $artists=Artist::orderBy('name')->get();
+        return view('albums.create', compact('artists'));
         //
     }
 

@@ -44,7 +44,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                <img class="h-10 w-10 rounded-full object-cover" src="{{ asset('/storage/images' . $artist->profileimage) }}" alt="">
+                                <img class="h-10 w-10 rounded-full object-cover" src="{{ asset('/images/' . $artist->profileimage) }}" alt="">
                                 </td>
                                 <td class="px-6 py-4">
                                     <a href="{{ route('artists.show', $artist) }}" class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Show</a>

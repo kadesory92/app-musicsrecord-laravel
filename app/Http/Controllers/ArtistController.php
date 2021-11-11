@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArtistRequest;
 use App\Models\Artist;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
+        return view('artists.create');
         //
     }
 
@@ -35,8 +37,16 @@ class ArtistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArtistRequest $artistRequest)
     {
+        $imageName = $artistRequest->file('profileimage')->store('public/storage/images');
+
+        Artist::create([
+            'name' => $artistRequest->name,
+            'profileimage' => $imageName,
+        ]);
+
+        return redirect()->route('artists.index')->with('success', 'Votre post a été créé');
         //
     }
 
