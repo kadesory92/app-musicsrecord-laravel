@@ -12,6 +12,7 @@
             @endforeach
             <h1 class="block w-full text-center text-gray-800 text-2xl font-bold mb-6">New Album Form</h1>
             <form action="{{ route('albums.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="flex flex-col mb-4">
                     <label class="mb-2 font-bold text-lg text-gray-900" for="name">Album Name</label>
                     <input class="border py-2 px-3 text-grey-800" type="text" name="name" id="name">

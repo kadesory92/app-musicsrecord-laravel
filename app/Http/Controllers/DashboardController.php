@@ -12,7 +12,7 @@ class DashboardController extends Controller
 
         $playlists = Playlist::where('user_id', auth()->user()->id)->get();
 
-        $albums=Album::all();
+        $albums=Album::with('playlists');
         
         return view('dashboard', compact('playlists'));
     }

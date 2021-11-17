@@ -26,7 +26,8 @@ class AlbumRequest extends FormRequest
         return [
             'cover_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'name' => 'required',
-            'desc_albums' => 'required'
+            'desc_albums' => 'required',
+            //'artist_id'=> 'required'
             //
         ];
     }

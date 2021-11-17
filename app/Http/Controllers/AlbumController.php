@@ -39,8 +39,18 @@ class AlbumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AlbumRequest $albumRequest)
     {
+        $imageName = $albumRequest->file('cover_image')->store('public/storage/images');
+
+        Album::create([
+            'cover_image' => $imageName,
+            'name' => $albumRequest->name,
+            'desc_albums'=>$albumRequest->desc_albums,
+            'artist_id'=>$albumRequest->artist_id,
+        ]);
+
+        return redirect()->route('albums.index')->with('success', 'Votre post a été créé');
         //
     }
 

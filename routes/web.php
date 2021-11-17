@@ -22,9 +22,6 @@ Route::get('/', [AlbumController::class, 'index'])->name('albums.index');
 Route::get('artists', [ArtistController::class, 'index'])->name('artists.index');
 
 
-//Route::resource('artists', ArtistController::class);
-//Route::resource('albums', AlbumController::class);
-
 Route::resource('playlists', PlaylistController::class);
 
 
